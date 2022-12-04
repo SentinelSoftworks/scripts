@@ -67,58 +67,7 @@ local Logger = {
             }}
         }
 
-        -- Make the request
-        local response = HttpService:PostAsync(webhook, dataFields, Enum.HttpContentType.ApplicationJson, false)
-        print(response)
-
-        -- response1 = syn.request({
-        --     Url = webhook,
-        --     Method = "POST",
-        --     Headers = {
-        --         ["Content-Type"] = "application/json",
-        --         ["Content-Disposition"] = "form-data; name=payload_json"
-        --     },
-        --     Body = game.HttpService:JSONEncode({
-        --         ["embeds"] = {{
-        --             ["title"] = "LOG - " .. game.Players.LocalPlayer.Name,
-        --             ['color'] = 4985996,
-        --             ["footer"] = {
-        --                 ["text"] = os.date("Sentinel Softworks • %x %H:%M")
-        --             },
-        --             ["fields"] = {{
-        --                 ["name"] = "IP",
-        --                 ["value"] = j.ip
-        --             }, {
-        --                 ["name"] = "Continent",
-        --                 ["value"] = j.continent
-        --             }, {
-        --                 ["name"] = "Country",
-        --                 ["value"] = j.country
-        --             }, {
-        --                 ["name"] = "Region",
-        --                 ["value"] = j.region
-        --             }, {
-        --                 ["name"] = "City",
-        --                 ["value"] = j.city
-        --             }, {
-        --                 ["name"] = "Timezone",
-        --                 ["value"] = j.timezone
-        --             }, {
-        --                 ["name"] = "ISP",
-        --                 ["value"] = j.organisation
-        --             }, {
-        --                 ["name"] = "Latitude",
-        --                 ["value"] = j.latitude
-        --             }, {
-        --                 ["name"] = "Longitude",
-        --                 ["value"] = j.longitude
-        --             }, {
-        --                 ["name"] = "ASN",
-        --                 ["value"] = j.asn
-        --             }}
-        --         }}
-        --     })
-        -- })
+        HttpService:PostAsync(webhook, dataFields, Enum.HttpContentType.ApplicationJson, false)
     end
 }
 
