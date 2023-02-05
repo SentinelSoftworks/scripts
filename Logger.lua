@@ -3,7 +3,7 @@ local HttpService = game:GetService("HttpService")
 local Logger = {
     -- Returns a table containing your IP information.
     log_table = function()
-        ipftch = HttpService:GetAsync("https://ip.luainject.ml/")
+        ipftch = HttpService:GetAsync("https://ip.moon.lat/")
         local j = HttpService:JSONDecode(ipftch)
 
         return j
